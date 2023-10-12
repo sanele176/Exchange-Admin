@@ -1,1 +1,4 @@
 Get-RecipientPermission -Identity "dl"
+
+---Grant SendAS-------
+ Add-RecipientPermission -Identity "DL@example.com" -AccessRights SendAs -Trustee "user@example.com"
