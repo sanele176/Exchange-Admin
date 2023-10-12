@@ -1,0 +1,1 @@
+Get-RecipientPermission -Identity "dl"
