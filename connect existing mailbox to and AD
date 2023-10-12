@@ -1,0 +1,16 @@
+- Get the Exchange GUID of the shared mailbox by running this command:  Get-Mailbox support.info@mtn.com |select Name,ExchangeGuid
+- Copy the Exchange GUID value and paste it in a text editor for later use
+- Get the object ID of the AD account by running this command: Get-AzureADUser -ObjectId <UserPrincipalName> | fl ObjectId
+- Set-AzureADUser -ObjectId <ObjectId> -ExtensionProperty @{msExchMailboxGuid="<ExchangeGuid>"}
+
+or
+
+Here is an example of how to do this with a shared mailbox named Sales and an AD account named John Smith:
+
+- Connect to Exchange Online PowerShell and run: Get-Mailbox -Identity sales@domain.com | select Name, ExchangeGuid. Suppose the output is: ExchangeGuid : 12345678-1234-1234-1234-123456789012
+
+- Connect to Exchange on-premises PowerShell and run: Enable-RemoteMailbox -Identity jsmith@domain.com -RemoteRoutingAddress sales@domain.mail.onmicrosoft.com
+
+- Connect to Exchange on-premises PowerShell and run: Enable-RemoteMailbox -Identity jsmith@domain.com -RemoteRoutingAddress sales@domain.mail.onmicrosoft.com
+
+- Set-RemoteMailbox -Identity jsmith@domain.com -ExchangeGuid 12345678-1234-1234-1234-123456789012
