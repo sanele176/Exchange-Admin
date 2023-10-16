@@ -1,0 +1,1 @@
+Get-ADUser -filter * -properties mail,title,department | select name,title,department,mail | Export-CSV c:\temp\users.csv -NoTypeInformation
