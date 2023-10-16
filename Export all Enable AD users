@@ -1,0 +1,1 @@
+Get-ADUser -Filter "Enabled -eq 'true'" | Export-CSV C:\Users\mancobd\Downloads\users.csv -NoTypeInformation
