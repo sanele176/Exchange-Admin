@@ -1,0 +1,2 @@
+extract users with certain attribute
+Get-AdUser -Filter "mail -like '*exfo.com'" -Properties name, company, mail | Export-csv -path c:\tmp\Exfo_users.csv
