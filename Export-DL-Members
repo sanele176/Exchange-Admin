@@ -1,0 +1,1 @@
+Get-DistributionGroupMember -Identity "dl@test.com" | Select Name, PrimarySmtpAddress | Export-Csv -Path ".\users.csv" -NoTypeInformation
