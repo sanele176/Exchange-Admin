@@ -1,0 +1,3 @@
+Get users allowed to send to a Distribution list
+
+Get-DistributionGroup -Identity "dl@test.com" | Select-Object -ExpandProperty AcceptMessagesOnlyFromSendersOrMembers
