@@ -1,1 +1,5 @@
+All details
 Get-User -Identity "user@test.com" |Format-List *
+
+filter
+Get-User -Identity "user@test.com" |Format-table name,WindowsEmailAddress
