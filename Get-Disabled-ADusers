@@ -1,0 +1,5 @@
+# Get all disabled users
+Get-ADUser -Filter 'Enabled -eq $false' -Properties mail | Where-Object {
+    # Filter users with email like .com
+    $_.mail -like "*.com"
+} | Format-Table Name, mail
