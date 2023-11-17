@@ -3,3 +3,13 @@ Get-ADUser -Filter 'Enabled -eq $false' -Properties mail | Where-Object {
     # Filter users with email like .com
     $_.mail -like "*.com"
 } | Format-Table Name, mail
+
+***********************Option 2*********************************************
+# Get all disabled users
+$users = Get-ADUser -Filter 'Enabled -eq $false' -Properties mail
+
+# Filter users with email like .com
+$filteredUsers = $users | Where-Object {$_.mail -like "*.com"}
+
+# Export to CSV
+$filteredUsers | Export-Csv -Path "C:\path\to\yourfile.csv" -NoTypeInformation
