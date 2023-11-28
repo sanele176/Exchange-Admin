@@ -1,0 +1,4 @@
+$i = 1
+Get-DistributionGroupMember -Identity "DL" | ForEach-Object {
+    "{0}. {1}" -f $i, $_.PrimarySmtpAddress
+    $i++
