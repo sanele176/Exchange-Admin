@@ -1,0 +1,1 @@
+Set-DistributionGroup -Identity "Distribution List Name" -PrimarySmtpAddress "newemail@newdomain.com"
