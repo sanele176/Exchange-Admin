@@ -1,0 +1,5 @@
+Get-RecoverableItems -Identity user1@4xtbj0.onmicrosoft.com -subjectcontains "User Submission"
+
+Now restore
+
+restore-RecoverableItems -Identity user1@4xtbj0.onmicrosoft.com -subjectcontains "User Submission"
