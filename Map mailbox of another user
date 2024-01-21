@@ -1,0 +1,1 @@
+add-MailboxPermission -Identity "parentmail"  -user "deletegateduser" -accessrights fullaccess -AutoMapping:$true
