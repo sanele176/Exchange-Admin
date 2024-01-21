@@ -1,0 +1,1 @@
+Add-MailboxFolderPermission -Identity user1@4xtbj0.onmicrosoft.com:\Inbox -User user2@4xtbj0.onmicrosoft.com -AccessRights owner
