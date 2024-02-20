@@ -1,0 +1,2 @@
+Set-Mailbox "usermailbox" -RetentionPolicy "policyname"
+
