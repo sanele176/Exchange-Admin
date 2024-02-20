@@ -1,2 +1,6 @@
 Set-Mailbox "usermailbox" -RetentionPolicy "policyname"
 
+check
+
+Get-mailbox -Identity "usermailbox" |Format-List RetentionPolicy
+
