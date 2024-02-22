@@ -1,0 +1,5 @@
+Set-DistributionGroup -Identity "Developers@4xtbj0.onmicrosoft.com" -EmailAddresses @{add="smtp:Devs@4xtbj0.onmicrosoft.com"}
+
+To remove secondary Email
+
+Set-DistributionGroup -Identity "Developers@4xtbj0.onmicrosoft.com" -EmailAddresses @{remove="smtp:Devs@4xtbj0.onmicrosoft.com"}
