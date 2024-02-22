@@ -1,0 +1,5 @@
+Add-DistributionGroupMember -Identity "Developers@4xtbj0.onmicrosoft.com" -Member "AdeleV@4xtbj0.onmicrosoft.com"
+
+Bulk add
+
+import-csv c:\temp\123.csv | foreach {Add-DistributionGroupMember -Identity "Developers@4xtbj0.onmicrosoft.com" -Member $_.email -Confirm:$false -ErrorAction SilentlyContinue} -whatif
