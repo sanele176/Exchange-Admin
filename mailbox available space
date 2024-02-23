@@ -1,0 +1,1 @@
+ Get-MailboxStatistics -Identity "usermailbox" | Format-List DisplayName, TotalItemSize, ItemCount
