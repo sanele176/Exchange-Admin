@@ -1,0 +1,6 @@
+Get-Mailbox -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'UserMailbox'" | Set-Mailbox -RetainDeletedItemsFor 30
+
+Verify on a user
+
+Get-Mailbox Pradeep.Dlamini@4xtbj0.onmicrosoft.com | Format-List RetainDeletedItemsFor
+RetainDeletedItemsFor : 30.00:00:00
