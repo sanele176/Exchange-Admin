@@ -1,0 +1,6 @@
+Get-MailboxStatistics -Identity "mailbox" | Format-List LastLogonTime
+LastLogonTime : 4/5/2024 4:36:39 PM
+
+Get all proberties
+
+Get-MailboxStatistics -Identity "mailbox" | Format-List *
