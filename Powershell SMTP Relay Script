@@ -1,0 +1,31 @@
+Powershell SMTP Relay Script
+
+$smtpServer = "relayhost"
+$smtpPort = 25
+
+$from = "senderEmail."
+$to = "receiverEmail"
+$subject = "Test SMTP Relay Without Authentication"
+$body = "This is a test email sent from PowerShell using Microsoft Relay SMTP without authentication."
+
+# Create the email message
+$message = New-Object Net.Mail.MailMessage
+$message.From = $from
+$message.To.Add($to)
+$message.Subject = $subject
+$message.Body = $body
+
+# Create the SMTP client object
+$smtpClient = New-Object Net.Mail.SmtpClient($smtpServer, $smtpPort)
+
+# Configure the SMTP client
+$smtpClient.EnableSsl = $false
+
+# Send the email
+try {
+    $smtpClient.Send($message)
+    Write-Host "Email sent successfully."
+} catch {
+    Write-Host "Failed to send email. Error: $_"
+}
+Email sent successfully.
