@@ -1,0 +1,3 @@
+$adGroupName = "testgroup"
+$memberCount = (Get-ADGroupMember -Identity $adGroupName -Recursive | Measure-Object).Count
+Write-Output "Total number of users in the group '$adGroupName': $memberCount"
