@@ -29,3 +29,46 @@ try {
     Write-Host "Failed to send email. Error: $_"
 }
 Email sent successfully.
+
+
+
+********************************with attachment************************************************
+
+$smtpServer = "relayhost"
+$smtpPort = 25
+
+$from = "sender"
+$to = "receiver"
+$subject = "Test SMTP Relay Without Authentication"
+$body = "This is a test email sent from PowerShell using Microsoft Relay SMTP without authentication."
+
+# Path to the attachment
+$attachmentPath = "C:\Users\MancobaD\Downloads\SKM_36724071010580.pdf"
+
+# Create the email message
+$message = New-Object Net.Mail.MailMessage
+$message.From = $from
+$message.To.Add($to)
+$message.Subject = $subject
+$message.Body = $body
+
+# Add attachment to the message
+$attachment = New-Object Net.Mail.Attachment($attachmentPath)
+$message.Attachments.Add($attachment)
+
+# Create the SMTP client object
+$smtpClient = New-Object Net.Mail.SmtpClient($smtpServer, $smtpPort)
+
+# Configure the SMTP client
+$smtpClient.EnableSsl = $false
+
+# Send the email
+try {
+    $smtpClient.Send($message)
+    Write-Host "Email sent successfully."
+} catch {
+    Write-Host "Failed to send email. Error: $_"
+}
+
+# Dispose the attachment after sending
+$attachment.Dispose()
