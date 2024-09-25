@@ -1,1 +1,7 @@
 Get-ADUser -filter * -properties mail,title,department | select name,title,department,mail | Export-CSV c:\temp\users.csv -NoTypeInformation
+
+***********************************************************************
+Get-ADUser -Filter * -Properties SamAccountName, mail, mobilephone, department, lastlogondate, lastLogonTimestamp, passwordlastset, enabled, passwordexpired | 
+    Select-Object Name, SamAccountName, mail, mobilephone, department, lastlogondate, lastLogonTimestamp, passwordlastset, enabled, passwordexpired | 
+    Export-Csv C:\Users\ggg\Downloads\allusers.csv -NoTypeInformation
+
