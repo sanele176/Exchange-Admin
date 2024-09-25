@@ -1,0 +1,7 @@
+-  Install-Module Microsoft.Graph -Scope CurrentUser
+-  Connect-MgGraph -Scopes "User.Read.All"
+- # Query Azure AD users with Usage Location set to "Eswatini" (country code "SZ")
+Get-MgUser -Filter "usageLocation eq 'SZ'" -Property displayName,userPrincipalName,usageLocation | 
+    Select-Object displayName, userPrincipalName, usageLocation |
+    Export-Csv C:\Users\mancobd\Downloads\AzureADUsers_Eswatini.csv -NoTypeInformation
+
