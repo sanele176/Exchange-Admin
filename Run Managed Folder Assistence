@@ -1,1 +1,10 @@
 Start-ManagedFolderAssistant -identity AdeleV@4xtbj0.onmicrosoft.com
+
+In case of error : RPC Error -2147220992
+
+get-mailboxLocation –user user@example.com.au | fl mailboxGuid,mailboxLocationType
+
+If you have archiving enabled, then this returns two GUIDs, one for the Primary and one for the MainArchive mailboxes.
+Grab the GUID for the Primary mailbox, and use it like so:
+
+Start-ManagedFolderAssistant aace1f4e-feed-ace0-babe-466f1deed1d1
