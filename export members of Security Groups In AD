@@ -1,0 +1,14 @@
+# Import the Active Directory module (if not already imported)
+Import-Module ActiveDirectory
+
+# Set the security group name
+$groupName = "YourSecurityGroupName"
+
+# Get group members with specific properties
+Get-ADGroupMember -Identity $groupName | ForEach-Object {
+    Get-ADUser -Identity $_.SamAccountName -Properties Name, WhenCreated, WhenChanged, SamAccountName, Enabled |
+    Select-Object Name, SamAccountName, WhenCreated, WhenChanged, Enabled
+} | Export-Csv -Path "C:\Path\To\Export\SecurityGroupMembers.csv" -NoTypeInformation -Encoding UTF8
+
+# Output for verification
+Write-Output "Group member details exported to SecurityGroupMembers.csv"
