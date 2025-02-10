@@ -1,0 +1,3 @@
+Permanetly Delete deteleted items or any items in a mailbox folder
+
+Clear-MailboxFolder -Identity "user@domain.com:\Deleted Items" -Confirm:$false
