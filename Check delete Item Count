@@ -1,0 +1,1 @@
+Get-MailboxFolderStatistics -Identity "user@domain.com" | Where-Object {$_.FolderPath -eq "/Deleted Items"} | Select-Object Name, ItemsInFolder, FolderSize
