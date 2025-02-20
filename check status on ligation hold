@@ -1,0 +1,2 @@
+check status on ligation hold
+Get-Mailbox -Identity "user@test.com" | Select-Object DisplayName, LitigationHoldEnabled, LitigationHoldDuration, LitigationHoldDate
