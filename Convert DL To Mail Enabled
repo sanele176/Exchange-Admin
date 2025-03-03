@@ -1,0 +1,6 @@
+- Ensure scope is universal
+- First change the type from Distribution to Security
+  Set-ADGroup "groupname(pre-windows 2000)" -GroupCategory Security
+
+- Then convert it
+  Set-ADGroup "groupname(pre-windows 2000)" -Replace @{mail="email.com"}
