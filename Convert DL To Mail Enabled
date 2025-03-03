@@ -4,3 +4,10 @@
 
 - Then convert it
   Set-ADGroup "groupname(pre-windows 2000)" -Replace @{mail="email.com"}
+****************************************************************************
+Converting back to DL from Mail Enabled
+- Disable Mail-Enablement: Remove the mail attributes from the group.
+  Disable-DistributionGroup -Identity "GroupName"
+
+- Change the Group Category: Convert the group category back to Distribution.
+  Set-ADGroup "GroupName" -GroupCategory Distribution
