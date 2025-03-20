@@ -1,0 +1,10 @@
+cmdkey /list
+cmdkey /delete:<target_name>
+cmdkey /delete:*
+
+Look for entries related to:
+
+SSO_POP_Device → Used for Azure AD authentication
+SSO_POP_User → Cached Azure AD user login
+EnterpriseCredential → Cached credentials for Windows services
+Generic credentials for *.microsoftonline.com or autologon.microsoftazuread-sso.com
