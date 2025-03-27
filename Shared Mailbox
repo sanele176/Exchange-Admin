@@ -1,0 +1,13 @@
+Convert Mailbox to Shared
+- Set-Mailbox -Identity "UserMailbox" -Type Shared
+
+Add mailbox permission
+- Add-MailboxPermission -Identity "SharedMailbox" -User "User1" -AccessRights FullAccess -AutoMapping $true
+- Add-RecipientPermission "SharedMailbox" -AccessRights SendAs -Trustee "User1"
+
+If permissions are not applying immediately, force an update:
+- Update-Recipient "SharedMailbox@domain.com"
+
+How to Revert a Shared Mailbox Back to a User Mailbox
+If you need to reconvert the shared mailbox back to a regular user mailbox, use:
+- Set-Mailbox -Identity "SharedMailbox" -Type Regular
