@@ -1,0 +1,5 @@
+configure the shared mailbox or delegated mailbox so that sent messages are saved in the shared mailbox's Sent Items folder instead. 
+This is done via settings in Microsoft Exchange or through PowerShell commands, depending on your setup. For example:
+
+powershell
+Set-Mailbox -Identity "SharedMailbox" -MessageCopyForSentAsEnabled $True -MessageCopyForSendOnBehalfEnabled $True
