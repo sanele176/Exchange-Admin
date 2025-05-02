@@ -1,0 +1,1 @@
+Get-RetentionPolicy | Select Name, RetentionPolicyTagLinks
