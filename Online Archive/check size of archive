@@ -1,0 +1,1 @@
+Get-MailboxStatistics -Archive -Identity "UserMailbox" | Select DisplayName, TotalItemSize
