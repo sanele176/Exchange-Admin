@@ -1,0 +1,5 @@
+Get-Mailbox user | FL AutoExpandingArchiveEnabled
+
+  enable it
+
+Enable-Mailbox user -AutoExpandingArchive
