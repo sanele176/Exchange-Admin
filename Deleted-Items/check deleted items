@@ -1,0 +1,1 @@
+Get-MailboxFolderStatistics -Identity "user" -FolderScope DeletedItems | Select Name, FolderSize, ItemsInFolder
