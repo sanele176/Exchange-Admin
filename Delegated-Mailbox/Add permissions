@@ -1,0 +1,1 @@
+Add-RecipientPermission -Identity "mailbox or DL" -AccessRights SendAs -Trustee "user"
