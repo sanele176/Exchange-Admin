@@ -1,0 +1,1 @@
+Remove-CalendarEvents -Identity "user" -CancelOrganizedMeetings -QueryWindowInDays 365
