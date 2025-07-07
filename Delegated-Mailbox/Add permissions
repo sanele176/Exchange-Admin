@@ -1,1 +1,5 @@
+Delegate Send as
 Add-RecipientPermission -Identity "mailbox or DL" -AccessRights SendAs -Trustee "user"
+
+Delegate access
+Add-MailboxPermission -Identity targetmailbox@domain.com -User delegateuser@domain.com -AccessRights FullAccess -AutoMapping $true
