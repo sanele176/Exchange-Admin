@@ -1,0 +1,1 @@
+Set-Mailbox user@domain.com -MaxSendSize 50MB -MaxReceiveSize 50MB
