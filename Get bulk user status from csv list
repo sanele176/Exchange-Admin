@@ -1,0 +1,32 @@
+# Load Active Directory module
+Import-Module ActiveDirectory -ErrorAction Stop
+
+# Read usernames from file (one per line)
+$usernames = Get-Content -Path "C:\temp\users.txt"
+
+# Collect results
+$results = foreach ($username in $usernames) {
+    if ([string]::IsNullOrWhiteSpace($username)) { continue }
+
+    try {
+        # Get AD user and Enabled property only
+        $user = Get-ADUser -Identity $username -Properties Enabled
+
+        [PSCustomObject]@{
+            Username = $user.SamAccountName
+            Enabled  = $user.Enabled
+        }
+    }
+    catch {
+        # If user not found or inaccessible
+        [PSCustomObject]@{
+            Username = $username.Trim()
+            Enabled  = "NotFound"
+        }
+    }
+}
+
+# Export results to CSV
+$results | Export-Csv -Path "C:\temp\user_enable_status.csv" -NoTypeInformation -Encoding UTF8
+
+Write-Host "✅ Export complete: C:\temp\user_enable_status.csv"
