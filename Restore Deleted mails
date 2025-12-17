@@ -1,5 +1,13 @@
 Get-RecoverableItems -Identity user1@4xtbj0.onmicrosoft.com -subjectcontains "User Submission"
 
+Get recovable items using time 
+
+Get-RecoverableItems -Identity user@test.com -ResultSize Unlimited |
+>> Where-Object {
+>>     $_.LastModifiedTime -ge (Get-Date "2025-12-17") -and
+>>     $_.LastModifiedTime -le (Get-Date "2025-12-17")
+>> }
+
 Now restore
 
 restore-RecoverableItems -Identity user1@4xtbj0.onmicrosoft.com -subjectcontains "User Submission"
